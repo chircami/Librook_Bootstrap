@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie-edge">
+    <title>MIO</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!--Logo-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-5">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+              <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+              Librook
+            </a>
+          </nav>
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+       
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Libros escolares<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Libros para niños</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Libros de cocina</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Libros de fotografia</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+<!--Sign-in-->
+<form class="form-inline my-2 my-lg-0 float-right p-2">
+    <button type="button" class="btn btn-sm btn-outline-info ml-2" data-toggle="modal"
+      data-target="#registerModal">Sign-in</button>
+  <!-- Login  -->
+    <button type="button" class="btn btn-sm btn-outline-info ml-2" data-toggle="modal" data-target="#loginModal">
+      Log-in
+    </button>
+</form>
+
+
+<!-- Register form  -->
+<section id="registerModal" class="modal fade container-fluid" role="dialog" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="content">
+<div class="modal-content">
+<div class="modal-header">
+  <div class="logo" role="primary" aria-label="logo">
+      <h3 class="modal-title" id="registerModalLabel">
+          Bienvenid@ a la zona de registro de Librook
+      </h3>
+  </div>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="container">
+      <form method="post" action="" id="myFormId2" onsubmit="return registerForm()" name="myForm2">
+          <div class="form-row">
+              <div class="form-group col-sm-4">
+                  <label for="inputmail">Correo electronico</label>
+                  <input type="mail" id="mail" name="mail" class="form-control" placeholder="Escribe correo electronico" pattern="^([\w\d._\-#])+@([\w\d._\-#]+[.][\w\d._\-#]+)+$" autocomplete="username">
+                  <div class="invalid-feedback" id="errorMail"></div>
+              </div>
+              <div class="form-group col-md-4">
+                  <label for="newPassword">Contraseña</label>
+                  <input type="password" id="newPassword" name="newPassword" class="form-control" placeholder="Escribe contraseña" autocomplete="new-password">
+                  <div class="invalid-feedback" id="errorPassword"></div>
+              </div>
+              <div class="form-group col-md-4">
+                  <label for="repeatPassword">Repite contraseña</label>
+                  <input type="password" id="repeatPassword" name="repeatPassword" class="form-control" placeholder="Repite contraseña" autocomplete="repeat-password">
+                  <div class="invalid-feedback" id="errorRepeatPassword"></div>
+              </div>
+            </select>
+              </div>
+              <div class="form-group">
+                  <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">Acepto las politicas de privacidad de Librook</label>
+                      <div class="invalid-feedback" id="errorCheck"></div>
+                  </div>
+              </div>
+          </div>
+  </div>
+  <div class="form-row">
+      <button type="submit" class="btn btn-secondary btn-sm ml-auto">Registrame</button>
+  </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- login section -->
+<section id="loginModal" class="modal fade container-fluid" role="dialog" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="content">
+<div class="modal-content">
+<div class="modal-header">
+  <div class="logo" role="primary" aria-label="logo">
+      <h3 class="modal-title" id="loginModalLabel">Bienvenid@ a la zona de usuario de Librook</h3>
+  </div>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <!-- TODO: Check form validation  -->
+  <form method="post" action="" id="myFormId3" onsubmit="return loginForm()" name="myForm3">
+      <div class="form-row">
+          <div class="form-group col-sm-6">
+              <label for="email">Correo electronico</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Escribe tu correo electronico"  autocomplete="username">
+              <div class="invalid-feedback" id="errorEmail"></div>
+          </div>
+          <div class="form-group col-sm-6">
+              <label for="inputPassword">Contraseña</label>
+              <input type="password" class="form-control" id="inputPassword" placeholder="Escribe la contraseña" autocomplete="password">
+              <div class="invalid-feedback" id="errorInputPassword"></div>
+          </div>
+      </div>
+      <div class="form-row">
+          <button type="submit" value="login" class="btn btn-secondary btn-sm ml-auto">Inicia sesion</button>
+      </div>
+  </form>
+</div>
+</section>
+
+
+
+<!--Seccion de libros-->     
+      <div class="container site-section text-center p-5" id="gallery">
+        <h1>Nuestros libros</h1>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card"><a data-lightbox="cakes" href="img/01_escuela.jpg" target="_blank"><img class="img-fluid" src="img/01_escuela.webp"></a></div>
+            </div>
+            <div class="col-md-3">
+                <div class="card"><a data-lightbox="cakes" href="img/02_niños.jpg" target="_blank"><img class="img-fluid" src="img/02_niños.webp"></a></div>
+            </div>
+            <div class="col-md-3">
+                <div class="card"><a data-lightbox="cakes" href="img/03_cocina.jpg" target="_blank"><img class="img-fluid" src="img/03_cocina.webp"></a></div>
+            </div>
+            <div class="col-md-3">
+                <div class="card"><a data-lightbox="cakes" href="img/04_fotografia.jpg" target="_blank"><img class="img-fluid" src="img/04_fotografia.webp"></a></div>
+            </div>
+        </div>
+    </div>
+   <br>
+    <footer class="mt-5">
+        <div class="container text-center pt-1">
+            Pagina creada por Mirkolino - ITACADEMY BCN
+        </div>
+    </footer>
+   
+
+
+   <!--**************************TERMINA EL CONTENIDO***********************************-->
+   <script src="./js/validate.js" type="text/javascript"></script>
+<script src="js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</body>
+</html>
